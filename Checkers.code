@@ -1,0 +1,53 @@
+import pygame
+import random
+import math
+import os
+
+pygame.init()
+pygame.mixer.init()
+
+#SET SCREEN SIZE
+display_width = 1600
+display_height = 1598
+
+#SET COLORS
+red = (180,1,1)
+blue = (1,1,180)
+
+gameDisplay = pygame.display.set_mode((display_width,display_height))
+pygame.display.set_caption('Dama')
+clock = pygame.time.Clock()
+
+#LOAD GAME ASSETS
+boardImg = pygame.image.load('Dama.jpg')
+coinImg = []
+coinImg.append(pygame.image.load('blue.png'))
+coinImg.append(pygame.image.load('red.png'))
+
+
+#Location of each spot on the board
+spots = []
+spots.append()
+spots.append()
+
+trough = [(),()]
+
+gameBoard = []
+playerScore = [0,0]
+currPlayer = 0
+AIPlayer = 1
+numMoves = 0
+
+
+#/*****************************/
+#/*** SET NUMBER OF PLAYERS ***/
+#/*****************************/
+AI_MODE = False #true for 1-player; false for 2-player
+
+
+
+#/***** GAME SETUP *****/
+def setupGame():
+  
+    #/* initialize random seed: */
+    random.seed()
